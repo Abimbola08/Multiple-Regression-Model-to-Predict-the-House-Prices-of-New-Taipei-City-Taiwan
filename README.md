@@ -10,7 +10,7 @@ A Multiple Regression Model is developed to predict house prices in New Taipei C
 The dataset has been split into train and test data. Exploring the train data reveals that the train data has 250 observations and 7 attributes. 
 The relationship between variables are as shown in the pairwise scatter plot in Fig.1 below. Inspection of the scatter plot suggest there may be need for transformation of variable “Distance”. The plots in the 7th row shows the relationship between the response variable “Price” and all other variables in the data frame. There is an unsual response value- observation 72 has a Price value of 117.5. There is no sign of multi-collinearity among explanatory variables.
  
- ![](fig1a)
+ ![](fig1a.PNG)
  
  
 ###  Methods
@@ -33,17 +33,21 @@ Model_3=β_1*Date+ β_2*Stores+ β_3*log_distance⁡〖+ β_4 〗*latitude+ β_5
 
 The result of the models in term of R2 RMSE and AIC is given in the table below:
 
-
+ ![](table1a.PNG)
 
 The result above shows that Model 2 is a better model with the Cp = p and smallest AIC. 
 We will proceed by checking the residual plot of Model 2 as shown in Fig. 2 below. From the residual plot, we cannot ascertain the equal variance assumption, the point are not all scattered around the zero line. The residual plot also shows unusual points in the data, we will check this point if they are indeed extreme. Fig. 3 shows the normal Q-Q plot, the points however does not fall completely on the line. 
 We will remove the unusual points and re-fit the model.
 Re-fitting the model didn’t influence the result much. We will keep the model and move on to assessment of the model and using case influence statistics:
 
+ ![](fig2a.PNG)
+ 
+  ![](fig3a.PNG)
  
 Cook’s distance: A total number of 3 points were raised as influential from the cook’s distance and they will be further inspected.
 Studentized residual shows that less than 5% of the data lie outside the +2 and -2 range. The model is satisfactory in this regards.
  
+  ![](fig4a.PNG)
 
 #### Prediction
 
@@ -52,6 +56,8 @@ The test data after being visualized has no much noise and will hereby be used t
 The RMSE for the test data is given as 6.06. We can hereby conclude that he model is a good model for prediction since the RMSE for train data given as 7.66 is quite similar to the RMSE of the test data.
 RMSE for Trained Model	7.66
 RMSE for Prediction (test data)	6.06
+
+ ![](table2a.PNG)
 
 #### Conclusion
 
